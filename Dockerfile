@@ -15,6 +15,4 @@ WORKDIR /opt/zookeeper
 
 VOLUME ["/opt/zookeeper/conf", "/opt/zookeeper/data"]
 
-EXPOSE 2181 2888 3888
-
 CMD ["/zk_start.sh"]
