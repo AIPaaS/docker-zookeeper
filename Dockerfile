@@ -8,6 +8,10 @@ RUN mv /opt/zookeeper-3.4.8 /opt/zookeeper \
     && cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg \
     && mkdir -p /opt/zookeeper/data 
 
+#设置时区
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo 'Asia/Shanghai' > /etc/timezone
+
 ADD ./zk_start.sh /zk_start.sh
 RUN chmod 777 /zk_start.sh
 
